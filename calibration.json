@@ -1,0 +1,132 @@
+{
+  "status": "Public231 fitted by original 12B method; no held-out validation",
+  "models": {
+    "metask-gemma4-12b-lora-awq": {
+      "fast": {
+        "placeholder": false,
+        "status": "public231 in-sample; no held-out validation",
+        "temperature_by_kind": {
+          "choice": 1.0,
+          "score": 1.189207115002721,
+          "noul": "one_bin"
+        },
+        "noul_calibration": {
+          "p_cal": 0.8378378378378378
+        },
+        "by_type": {
+          "noul": {
+            "count": 74,
+            "p_cal": 0.8378378378378378,
+            "fitted": true,
+            "status": "candidate"
+          },
+          "choice": {
+            "count": 139,
+            "temperature": 1.0,
+            "nll": 0.3325016830019399,
+            "fitted": true,
+            "status": "candidate"
+          },
+          "score": {
+            "count": 18,
+            "temperature": 1.189207115002721,
+            "nll": 0.43412577138619657,
+            "fitted": true,
+            "status": "insufficient"
+          }
+        },
+        "source_placeholder": true,
+        "held_out_validated": false
+      },
+      "slow": {
+        "placeholder": false,
+        "status": "public231 in-sample; no held-out validation",
+        "temperature_by_kind": {
+          "choice": 3.363585661014858,
+          "score": 0.0625,
+          "noul": "one_bin"
+        },
+        "noul_calibration": {
+          "p_cal": 0.9
+        },
+        "by_type": {
+          "noul": {
+            "count": 6,
+            "p_cal": 0.999999,
+            "fitted": true,
+            "status": "insufficient"
+          },
+          "choice": {
+            "count": 9,
+            "temperature": 3.363585661014858,
+            "nll": 0.823523843037582,
+            "fitted": true,
+            "status": "insufficient"
+          },
+          "score": {
+            "count": 2,
+            "temperature": 0.0625,
+            "nll": 0.0,
+            "fitted": true,
+            "status": "insufficient"
+          }
+        },
+        "source_placeholder": true,
+        "held_out_validated": false
+      },
+      "fallback": {
+        "placeholder": false,
+        "status": "public231 in-sample; no held-out validation",
+        "temperature_by_kind": {
+          "choice": 1.0,
+          "score": 1.189207115002721,
+          "noul": "one_bin"
+        },
+        "noul_calibration": {
+          "p_cal": 0.8378378378378378
+        },
+        "by_type": {
+          "noul": {
+            "count": 2,
+            "p_cal": 0.5,
+            "fitted": true,
+            "status": "insufficient",
+            "inherited_from": "fast"
+          },
+          "choice": {
+            "count": 2,
+            "temperature": 6.727171322029716,
+            "nll": 1.3511173952839002,
+            "fitted": true,
+            "status": "insufficient",
+            "inherited_from": "fast"
+          },
+          "score": {
+            "count": 1,
+            "temperature": 0.5946035575013605,
+            "nll": 1.2107905784146484,
+            "fitted": true,
+            "status": "insufficient",
+            "inherited_from": "fast"
+          }
+        },
+        "source_placeholder": true,
+        "held_out_validated": false
+      },
+      "placeholder": false,
+      "fitted_for": {
+        "model_key": "metask-gemma4-12b-lora-awq",
+        "quant": "awq",
+        "adapter": "model-subdir:adapter",
+        "prompt_sha": "e18ed7a06eb52f1b351458f384710a2c240aaf2b4f64d916b776c6d18ca3f938",
+        "backend": "vllm",
+        "margin_kind": "logratio",
+        "max_new_tokens": 512,
+        "reasoning_words": 300,
+        "max_prompt_tokens": 8192,
+        "request_contract": "typesafe.criteria.v1"
+      }
+    }
+  },
+  "held_out_validated": false
+}

@@ -1,0 +1,116 @@
+{
+  "adapter": {
+    "adapter_manifest_sha256": "f83c773dcc0b2c9eadbcc1e9d23a7fa7e9569cf188ee25a64810395d8acff066",
+    "alpha": 32,
+    "base_model": "google/gemma-4-12B-it-qat-q4_0-unquantized",
+    "base_revision": "b6ed86275a6a5735884e208bfed95b445a684ca2",
+    "files": {
+      "adapter_config.json": {
+        "sha256": "5353f6d8c314fd156b6a729b3a2d7f3ff4a973e3a29f4820e95a3242308c9794",
+        "size": 1237
+      },
+      "adapter_model.safetensors": {
+        "sha256": "56ba89a8f1912c17a4de55d6de4dbe8a014e772a95bb2a9ab4cbe36387c96d95",
+        "size": 262373216
+      }
+    },
+    "format": "peft-lora",
+    "merged": false,
+    "rank": 16,
+    "serving_dtype": "bfloat16",
+    "status": "local_hashed",
+    "stored_tensors": {
+      "dtypes": {
+        "F32": 656
+      },
+      "k_eq_v_layers_without_v_proj_lora": [
+        5,
+        11,
+        17,
+        23,
+        29,
+        35,
+        41,
+        47
+      ],
+      "layers": 48,
+      "module_count": 328,
+      "rank": 16,
+      "targets": [
+        "down_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "q_proj",
+        "up_proj",
+        "v_proj"
+      ],
+      "tensor_count": 656
+    },
+    "subdir": "adapter",
+    "target_modules": [
+      "down_proj",
+      "gate_proj",
+      "k_proj",
+      "o_proj",
+      "q_proj",
+      "up_proj",
+      "v_proj"
+    ]
+  },
+  "arm": "FINALIST",
+  "audit_files": {
+    "ADAPTER_MANIFEST.json": {
+      "sha256": "f83c773dcc0b2c9eadbcc1e9d23a7fa7e9569cf188ee25a64810395d8acff066",
+      "size": 2680
+    }
+  },
+  "awq_manifest_sha256": "65a922e33641d75c77f769cbfd4abf91c33732123041d3460c81a6d12044b8d3",
+  "files": {
+    "chat_template.jinja": {
+      "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+      "size": 18683
+    },
+    "config.json": {
+      "sha256": "b10b34506f6aace6f748c6387ec518da333faa3855e8137ec7ba3ade673f78df",
+      "size": 5414
+    },
+    "generation_config.json": {
+      "sha256": "040d0ccb9e10df02df9738424c1ce6d20d5d15b09362da922093ccd97573dbb4",
+      "size": 255
+    },
+    "model.safetensors": {
+      "sha256": "5e0659d62dfcdb752503d695d83ba6241db811572fadb68b858ffa0c6a906bff",
+      "size": 8421320792
+    },
+    "processor_config.json": {
+      "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+      "size": 1382
+    },
+    "tokenizer.json": {
+      "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "size": 32169626
+    },
+    "tokenizer_config.json": {
+      "sha256": "9669970d5b0bcfcb47a09256f9e66837c313926ff15e9ba4c60e8bbe3c6bdf84",
+      "size": 3734
+    }
+  },
+  "format": "compressed-tensors",
+  "identity_sha256": "a0b93cb5a2459fc8836c625fb15ded624e498c61012d1693ff103181687f181d",
+  "local_audit_files": {
+    "AWQ_MANIFEST.json": {
+      "sha256": "65a922e33641d75c77f769cbfd4abf91c33732123041d3460c81a6d12044b8d3",
+      "size": 29209
+    },
+    "QUANTIZATION_STARTED.json": {
+      "sha256": "9e42d03cea4b8b7bb6d9e42935dd2d10f2845bf48e03d4e394ae24ba9287d3c9",
+      "size": 3831
+    }
+  },
+  "publish_authority": "repository owner",
+  "release_ready": false,
+  "repo_id": "MeTask-Rain/metask-jev-rain-12B-trained",
+  "revision": "cf3706fdd57e23025a8c97fbde86bd5b4a547010",
+  "status": "local_hashed"
+}

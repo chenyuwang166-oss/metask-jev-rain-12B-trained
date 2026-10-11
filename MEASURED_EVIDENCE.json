@@ -1,0 +1,1098 @@
+{
+  "adapter": {
+    "adapter_manifest_sha256": "f83c773dcc0b2c9eadbcc1e9d23a7fa7e9569cf188ee25a64810395d8acff066",
+    "adapter_model_sha256": "56ba89a8f1912c17a4de55d6de4dbe8a014e772a95bb2a9ab4cbe36387c96d95",
+    "checkpoint_step": 300,
+    "files": {
+      "adapter_config.json": {
+        "sha256": "5353f6d8c314fd156b6a729b3a2d7f3ff4a973e3a29f4820e95a3242308c9794",
+        "size": 1237
+      },
+      "adapter_model.safetensors": {
+        "sha256": "56ba89a8f1912c17a4de55d6de4dbe8a014e772a95bb2a9ab4cbe36387c96d95",
+        "size": 262373216
+      }
+    },
+    "lora": {
+      "lora_alpha": 32,
+      "r": 16,
+      "target_modules": [
+        "down_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "q_proj",
+        "up_proj",
+        "v_proj"
+      ]
+    },
+    "merged": false,
+    "status": "bound",
+    "stored_tensors": {
+      "dtypes": {
+        "F32": 656
+      },
+      "k_eq_v_layers_without_v_proj_lora": [
+        5,
+        11,
+        17,
+        23,
+        29,
+        35,
+        41,
+        47
+      ],
+      "layers": 48,
+      "module_count": 328,
+      "rank": 16,
+      "targets": [
+        "down_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "q_proj",
+        "up_proj",
+        "v_proj"
+      ],
+      "tensor_count": 656
+    },
+    "training_manifest_sha256": "8890b0e42cd2a2cd5f3c98a7914718c21d5e4d45d81146262bb5747d6a9445bd",
+    "vllm_lora_options": {
+      "max_lora_rank": 16
+    }
+  },
+  "arm": "FINALIST",
+  "binding_sha256": "621298f3ce9c4826de5c56a28e68d66cf9958897f2618acdbd82b5b5ec8e38bf",
+  "frozen": false,
+  "model_identity_sha256": "a0b93cb5a2459fc8836c625fb15ded624e498c61012d1693ff103181687f181d",
+  "package_serve_smoke": "separate operator report (package_smoke/package_smoke.json) against this exact package directory",
+  "protocol": "submit_v15",
+  "publication_authorized": false,
+  "qualification": "Measured engine counts use inherited provisional F prices; official native pricing and harness acceptance remain pending.",
+  "quantization": {
+    "FINALIST": {
+      "blocks_preparation": false,
+      "bound_comparison": null,
+      "note": "Merged-AWQ FINALIST reports are not inputs of this route; any internal diagnostic is disclosed as transcribed text only.",
+      "report_only": true,
+      "status": "adapter-route quant_validation readout not re-measured by submit_v15"
+    },
+    "U0": {
+      "arm": "U0",
+      "awq_model_sha256": "cb0159a5c166ba61a1b342cc588d53aba287484fea7fa28f02491ba84ff31b6e",
+      "backend_changed": true,
+      "blocks_preparation": false,
+      "centered_label_max_absolute": 10.664358795174849,
+      "checks": {},
+      "correct_after": 356,
+      "correct_before": 359,
+      "diagnostic_only": true,
+      "dtype_after": "bfloat16",
+      "dtype_before": "float32",
+      "dtype_protocol": {
+        "awq_input_dtype": "bfloat16",
+        "awq_input_policy": "d2",
+        "awq_readout_dtype": "bfloat16",
+        "awq_serialized_float_dtype": "bfloat16",
+        "reference_dtype": "float32"
+      },
+      "fp32_model_sha256": "cd91aa253e996f5717813c9281c41f37436589bca1b26ff6a8e739c8d1d4aea1",
+      "interpretation": "U0 performance is diagnostic only; FINALIST uses preregistered paired relative counts. Centered error is report-only; load, health, missing or invalid readouts remain pipeline faults. No statistical evidence or publication authorization.",
+      "kind": "fastlane_quant_gate_v13",
+      "n": 512,
+      "net_loss": 3,
+      "passed": true,
+      "policy": {
+        "centered_error": "report_only",
+        "max_net_loss_above_u0": 3,
+        "max_prediction_flips_above_u0": 5,
+        "required_n": 512,
+        "u0": "diagnostic_only_except_pipeline_fault"
+      },
+      "prediction_flips": 43,
+      "report_only": true,
+      "right_to_wrong": 19,
+      "schema_version": 2,
+      "u0_diagnostic": null,
+      "wrong_to_right": 16
+    }
+  },
+  "reports": {
+    "ADAPTER_EFFECT.json": {
+      "reported": {
+        "effect": {
+          "magnitudes_report_only": true,
+          "max_abs_raw_score_delta": 14.362655010404193,
+          "median_item_max_abs_raw_score_delta": 7.934822579590135,
+          "n": 231,
+          "passed": true,
+          "prediction_changes": 16,
+          "required_min_changes": 5,
+          "rule": "FINALIST vs U0 argmax changes >= max(5, ceil(1/50 * n))",
+          "scope": "identity check that the bound adapter is applied; direction and quality are not judged",
+          "source": "public231 fast-only fit collections, raw label scores"
+        },
+        "hard_check": true,
+        "kind": "adapter_effect_v15"
+      },
+      "sha256": "abd8700101779ebc6f81da4432337f98d566b5805c0430d3c96f0d667b63349e",
+      "source_kind": "operator report; no model executed by builder"
+    },
+    "CAPABILITY_REPORT.json": {
+      "reported": {
+        "anchor": {
+          "high_n": 283,
+          "high_wrong": 14,
+          "low_wrong": 3
+        },
+        "corpus_macro": {
+          "after": 0.8397382029734971,
+          "before": 0.7044881082406438,
+          "delta": 0.13525009473285335
+        },
+        "hard_checks": {
+          "adapter_effect": {
+            "n": 1052,
+            "passed": true,
+            "prediction_changes": 245,
+            "required_min_changes": 22,
+            "rule": "FINALIST vs U0 argmax changes >= max(5, ceil(1/50 * n))",
+            "scope": "identity check that the bound adapter is applied; direction and quality are not judged",
+            "source": "capability dev rows (raw scores) FINALIST vs U0 predictions"
+          },
+          "adapter_effect_observed": true,
+          "arm_adapter_binding_verified": true,
+          "readout_errors_zero": true
+        },
+        "historical_quality_checks": {
+          "corpus_macro_nonnegative": true,
+          "corpus_net_correct_nonnegative": true,
+          "high_margin_anchor_preserved": true,
+          "struct_absolute_minimum": true,
+          "struct_net_correct_nonnegative": true
+        },
+        "historical_quality_passed": true,
+        "interpretation": "统计无法区分，除非逐项配对统计另有证据；复用选点 dev，不能证明独立泛化。",
+        "kind": "capability_report",
+        "paired": {
+          "anchor_dev": {
+            "after_correct": 283,
+            "after_errors": 0,
+            "before_correct": 280,
+            "before_errors": 0,
+            "both_correct": 268,
+            "both_wrong": 5,
+            "correctness_relation": "net_improvement",
+            "fixed": 15,
+            "mcnemar_exact_two_sided_p": 0.7011080384254456,
+            "n": 300,
+            "net_correct": 3,
+            "regressed": 12,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": false
+          },
+          "corpus_dev": {
+            "after_correct": 390,
+            "after_errors": 0,
+            "before_correct": 320,
+            "before_errors": 0,
+            "both_correct": 308,
+            "both_wrong": 62,
+            "correctness_relation": "net_improvement",
+            "fixed": 82,
+            "mcnemar_exact_two_sided_p": 5.6223687374767304e-14,
+            "n": 464,
+            "net_correct": 70,
+            "regressed": 12,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "struct_dev": {
+            "after_correct": 251,
+            "after_errors": 0,
+            "before_correct": 165,
+            "before_errors": 0,
+            "both_correct": 150,
+            "both_wrong": 22,
+            "correctness_relation": "net_improvement",
+            "fixed": 101,
+            "mcnemar_exact_two_sided_p": 7.752808767891495e-17,
+            "n": 288,
+            "net_correct": 86,
+            "regressed": 15,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          }
+        },
+        "per_family": {
+          "adequacy": {
+            "after_correct": 35,
+            "after_errors": 0,
+            "before_correct": 29,
+            "before_errors": 0,
+            "both_correct": 28,
+            "both_wrong": 4,
+            "correctness_relation": "net_improvement",
+            "fixed": 7,
+            "mcnemar_exact_two_sided_p": 0.0703125,
+            "n": 40,
+            "net_correct": 6,
+            "regressed": 1,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": false
+          },
+          "ambiguous": {
+            "after_correct": 12,
+            "after_errors": 0,
+            "before_correct": 12,
+            "before_errors": 0,
+            "both_correct": 12,
+            "both_wrong": 5,
+            "correctness_relation": "no_observed_correctness_change",
+            "fixed": 0,
+            "mcnemar_exact_two_sided_p": 1.0,
+            "n": 17,
+            "net_correct": 0,
+            "regressed": 0,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": true
+          },
+          "fact": {
+            "after_correct": 40,
+            "after_errors": 0,
+            "before_correct": 40,
+            "before_errors": 0,
+            "both_correct": 40,
+            "both_wrong": 0,
+            "correctness_relation": "no_observed_correctness_change",
+            "fixed": 0,
+            "mcnemar_exact_two_sided_p": 1.0,
+            "n": 40,
+            "net_correct": 0,
+            "regressed": 0,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": true
+          },
+          "intent": {
+            "after_correct": 30,
+            "after_errors": 0,
+            "before_correct": 30,
+            "before_errors": 0,
+            "both_correct": 30,
+            "both_wrong": 0,
+            "correctness_relation": "no_observed_correctness_change",
+            "fixed": 0,
+            "mcnemar_exact_two_sided_p": 1.0,
+            "n": 30,
+            "net_correct": 0,
+            "regressed": 0,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": true
+          },
+          "judge_hard": {
+            "after_correct": 22,
+            "after_errors": 0,
+            "before_correct": 23,
+            "before_errors": 0,
+            "both_correct": 19,
+            "both_wrong": 2,
+            "correctness_relation": "net_regression",
+            "fixed": 3,
+            "mcnemar_exact_two_sided_p": 1.0,
+            "n": 28,
+            "net_correct": -1,
+            "regressed": 4,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": false
+          },
+          "long_policy": {
+            "after_correct": 29,
+            "after_errors": 0,
+            "before_correct": 16,
+            "before_errors": 0,
+            "both_correct": 15,
+            "both_wrong": 10,
+            "correctness_relation": "net_improvement",
+            "fixed": 14,
+            "mcnemar_exact_two_sided_p": 0.0009765625,
+            "n": 40,
+            "net_correct": 13,
+            "regressed": 1,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "multi_hop": {
+            "after_correct": 13,
+            "after_errors": 0,
+            "before_correct": 9,
+            "before_errors": 0,
+            "both_correct": 9,
+            "both_wrong": 27,
+            "correctness_relation": "net_improvement",
+            "fixed": 4,
+            "mcnemar_exact_two_sided_p": 0.125,
+            "n": 40,
+            "net_correct": 4,
+            "regressed": 0,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": false
+          },
+          "ordinal": {
+            "after_correct": 39,
+            "after_errors": 0,
+            "before_correct": 33,
+            "before_errors": 0,
+            "both_correct": 33,
+            "both_wrong": 1,
+            "correctness_relation": "net_improvement",
+            "fixed": 6,
+            "mcnemar_exact_two_sided_p": 0.03125,
+            "n": 40,
+            "net_correct": 6,
+            "regressed": 0,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "policy": {
+            "after_correct": 36,
+            "after_errors": 0,
+            "before_correct": 32,
+            "before_errors": 0,
+            "both_correct": 29,
+            "both_wrong": 1,
+            "correctness_relation": "net_improvement",
+            "fixed": 7,
+            "mcnemar_exact_two_sided_p": 0.34375,
+            "n": 40,
+            "net_correct": 4,
+            "regressed": 3,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": false
+          },
+          "probability": {
+            "after_correct": 39,
+            "after_errors": 0,
+            "before_correct": 25,
+            "before_errors": 0,
+            "both_correct": 25,
+            "both_wrong": 1,
+            "correctness_relation": "net_improvement",
+            "fixed": 14,
+            "mcnemar_exact_two_sided_p": 0.0001220703125,
+            "n": 40,
+            "net_correct": 14,
+            "regressed": 0,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "temporal_numeric": {
+            "after_correct": 28,
+            "after_errors": 0,
+            "before_correct": 14,
+            "before_errors": 0,
+            "both_correct": 12,
+            "both_wrong": 10,
+            "correctness_relation": "net_improvement",
+            "fixed": 16,
+            "mcnemar_exact_two_sided_p": 0.001312255859375,
+            "n": 40,
+            "net_correct": 14,
+            "regressed": 2,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "tradeoff": {
+            "after_correct": 38,
+            "after_errors": 0,
+            "before_correct": 30,
+            "before_errors": 0,
+            "both_correct": 29,
+            "both_wrong": 1,
+            "correctness_relation": "net_improvement",
+            "fixed": 9,
+            "mcnemar_exact_two_sided_p": 0.021484375,
+            "n": 40,
+            "net_correct": 8,
+            "regressed": 1,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "trap": {
+            "after_correct": 29,
+            "after_errors": 0,
+            "before_correct": 27,
+            "before_errors": 0,
+            "both_correct": 27,
+            "both_wrong": 0,
+            "correctness_relation": "net_improvement",
+            "fixed": 2,
+            "mcnemar_exact_two_sided_p": 0.5,
+            "n": 29,
+            "net_correct": 2,
+            "regressed": 0,
+            "statistical_readout": "统计无法区分",
+            "zero_effect": false
+          }
+        },
+        "quality_report_only": true,
+        "route": "U0/awq int4 base; FINALIST adds the unmerged bound LoRA via vLLM enable_lora",
+        "status": "MEASURED_REPORT_ONLY"
+      },
+      "sha256": "defb436c805a934193bac78385d4efd78dd9a7ba53907d11058a59578b83ae8c",
+      "source_kind": "operator report; no model executed by builder"
+    },
+    "SERVICE_REPORT.json": {
+      "reported": {
+        "hard_checks": {
+          "adapter_effect": {
+            "n": 2005,
+            "passed": true,
+            "prediction_changes": 572,
+            "required_min_changes": 41,
+            "rule": "FINALIST vs U0 argmax changes >= max(5, ceil(1/50 * n))",
+            "scope": "identity check that the bound adapter is applied; direction and quality are not judged",
+            "source": "service_dev q0 (fast-only) FINALIST vs U0 predictions"
+          },
+          "adapter_effect_observed": true,
+          "adjusted_p50_cap_seconds": 1.233,
+          "arm_adapter_binding_verified": true,
+          "cost_cap_per_1000_usd": 0.0646,
+          "cost_latency_provisional_pass": true,
+          "default_package_cost_latency_pass": true,
+          "default_package_quota": 0.15,
+          "pipeline_readout_zero_errors": true,
+          "q0_requires_explicit_maintainer_choice": true,
+          "qualifying_finalist_quotas": [
+            "q15",
+            "q0"
+          ],
+          "repeatability": "separate report required"
+        },
+        "kind": "service_report_v15",
+        "measured": true,
+        "metrics": {
+          "F-q0": {
+            "accuracy": 0.654364089775561,
+            "adjusted_p50_seconds": 0.29610851200268373,
+            "brier": 0.48703060032833767,
+            "correct": 1312,
+            "cost_basis": "measured engine token counts times inherited F reference price assumption",
+            "cost_cap_met": true,
+            "cost_per_1000_usd": 0.03685753117206992,
+            "input_tokens": 1471972,
+            "latency_adjustment": {
+              "offset_seconds": 0.15,
+              "scale": 2.0
+            },
+            "latency_cap_met": true,
+            "n": 2005,
+            "official_result": false,
+            "output_tokens": 2005,
+            "price_per_million": {
+              "input_per_million": 0.05,
+              "note": "Reference price assumption: google/gemma-3-12b-it is the nearest listed size class; OpenRouter has no gemma-4-12b listing. Not an actual Gemma 4 tariff.",
+              "output_per_million": 0.15
+            },
+            "raw_p50_seconds": 0.07305425600134186,
+            "readout_errors": 0,
+            "slow_share": 0.0
+          },
+          "F-q15": {
+            "accuracy": 0.7107231920199502,
+            "adjusted_p50_seconds": 0.3142178559995955,
+            "brier": 0.4186671429070036,
+            "correct": 1425,
+            "cost_basis": "measured engine token counts times inherited F reference price assumption",
+            "cost_cap_met": true,
+            "cost_per_1000_usd": 0.04721992518703255,
+            "input_tokens": 1605591,
+            "latency_adjustment": {
+              "offset_seconds": 0.15,
+              "scale": 2.0
+            },
+            "latency_cap_met": true,
+            "n": 2005,
+            "official_result": false,
+            "output_tokens": 95976,
+            "price_per_million": {
+              "input_per_million": 0.05,
+              "note": "Reference price assumption: google/gemma-3-12b-it is the nearest listed size class; OpenRouter has no gemma-4-12b listing. Not an actual Gemma 4 tariff.",
+              "output_per_million": 0.15
+            },
+            "raw_p50_seconds": 0.08210892799979774,
+            "readout_errors": 0,
+            "slow_share": 0.1486284289276808
+          },
+          "FINALIST-q0": {
+            "accuracy": 0.8518703241895261,
+            "adjusted_p50_seconds": 0.4361185440051486,
+            "brier": 0.2315899409249207,
+            "correct": 1708,
+            "cost_basis": "measured engine token counts times inherited F reference price assumption",
+            "cost_cap_met": true,
+            "cost_per_1000_usd": 0.03685753117206992,
+            "input_tokens": 1471972,
+            "latency_adjustment": {
+              "offset_seconds": 0.15,
+              "scale": 2.0
+            },
+            "latency_cap_met": true,
+            "n": 2005,
+            "official_result": false,
+            "output_tokens": 2005,
+            "price_per_million": {
+              "input_per_million": 0.05,
+              "note": "Reference price assumption: google/gemma-3-12b-it is the nearest listed size class; OpenRouter has no gemma-4-12b listing. Not an actual Gemma 4 tariff.",
+              "output_per_million": 0.15
+            },
+            "raw_p50_seconds": 0.1430592720025743,
+            "readout_errors": 0,
+            "slow_share": 0.0
+          },
+          "FINALIST-q15": {
+            "accuracy": 0.8912718204488778,
+            "adjusted_p50_seconds": 0.45249653200007744,
+            "brier": 0.1799481288038506,
+            "correct": 1787,
+            "cost_basis": "measured engine token counts times inherited F reference price assumption",
+            "cost_cap_met": true,
+            "cost_per_1000_usd": 0.04611498753117211,
+            "input_tokens": 1594289,
+            "latency_adjustment": {
+              "offset_seconds": 0.15,
+              "scale": 2.0
+            },
+            "latency_cap_met": true,
+            "n": 2005,
+            "official_result": false,
+            "output_tokens": 84974,
+            "price_per_million": {
+              "input_per_million": 0.05,
+              "note": "Reference price assumption: google/gemma-3-12b-it is the nearest listed size class; OpenRouter has no gemma-4-12b listing. Not an actual Gemma 4 tariff.",
+              "output_per_million": 0.15
+            },
+            "raw_p50_seconds": 0.1512482660000387,
+            "readout_errors": 0,
+            "slow_share": 0.14413965087281796
+          },
+          "U0-q0": {
+            "accuracy": 0.6593516209476309,
+            "adjusted_p50_seconds": 0.2961572960033664,
+            "brier": 0.48527690219812675,
+            "correct": 1322,
+            "cost_basis": "measured engine token counts times inherited F reference price assumption",
+            "cost_cap_met": true,
+            "cost_per_1000_usd": 0.03685753117206992,
+            "input_tokens": 1471972,
+            "latency_adjustment": {
+              "offset_seconds": 0.15,
+              "scale": 2.0
+            },
+            "latency_cap_met": true,
+            "n": 2005,
+            "official_result": false,
+            "output_tokens": 2005,
+            "price_per_million": {
+              "input_per_million": 0.05,
+              "note": "Reference price assumption: google/gemma-3-12b-it is the nearest listed size class; OpenRouter has no gemma-4-12b listing. Not an actual Gemma 4 tariff.",
+              "output_per_million": 0.15
+            },
+            "raw_p50_seconds": 0.07307864800168318,
+            "readout_errors": 0,
+            "slow_share": 0.0
+          },
+          "U0-q15": {
+            "accuracy": 0.7127182044887781,
+            "adjusted_p50_seconds": 0.31687001000173043,
+            "brier": 0.41978937167675506,
+            "correct": 1429,
+            "cost_basis": "measured engine token counts times inherited F reference price assumption",
+            "cost_cap_met": true,
+            "cost_per_1000_usd": 0.046934264339152244,
+            "input_tokens": 1599131,
+            "latency_adjustment": {
+              "offset_seconds": 0.15,
+              "scale": 2.0
+            },
+            "latency_cap_met": true,
+            "n": 2005,
+            "official_result": false,
+            "output_tokens": 94311,
+            "price_per_million": {
+              "input_per_million": 0.05,
+              "note": "Reference price assumption: google/gemma-3-12b-it is the nearest listed size class; OpenRouter has no gemma-4-12b listing. Not an actual Gemma 4 tariff.",
+              "output_per_million": 0.15
+            },
+            "raw_p50_seconds": 0.0834350050008652,
+            "readout_errors": 0,
+            "slow_share": 0.1486284289276808
+          }
+        },
+        "paired": {
+          "FINALIST_vs_F_q0": {
+            "after_correct": 1708,
+            "after_errors": 0,
+            "before_correct": 1312,
+            "before_errors": 0,
+            "both_correct": 1233,
+            "both_wrong": 218,
+            "brier_delta": -0.255440659403417,
+            "brier_guardrail_report_only": true,
+            "by_type": {
+              "choice": {
+                "after_correct": 333,
+                "after_errors": 0,
+                "before_correct": 223,
+                "before_errors": 0,
+                "both_correct": 208,
+                "both_wrong": 104,
+                "brier_delta": -0.2891791883458234,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 125,
+                "mcnemar_exact_two_sided_p": 8.894877270372545e-23,
+                "n": 452,
+                "net_correct": 110,
+                "regressed": 15,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "noul": {
+                "after_correct": 1257,
+                "after_errors": 0,
+                "before_correct": 1006,
+                "before_errors": 0,
+                "both_correct": 947,
+                "both_wrong": 103,
+                "brier_delta": -0.2262320115555776,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 310,
+                "mcnemar_exact_two_sided_p": 3.1251364206287235e-42,
+                "n": 1419,
+                "net_correct": 251,
+                "regressed": 59,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "score": {
+                "after_correct": 118,
+                "after_errors": 0,
+                "before_correct": 83,
+                "before_errors": 0,
+                "both_correct": 78,
+                "both_wrong": 11,
+                "brier_delta": -0.4509425714493097,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 40,
+                "mcnemar_exact_two_sided_p": 7.878384167270269e-08,
+                "n": 134,
+                "net_correct": 35,
+                "regressed": 5,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              }
+            },
+            "correctness_relation": "net_improvement",
+            "fixed": 475,
+            "mcnemar_exact_two_sided_p": 7.184856348503956e-70,
+            "n": 2005,
+            "net_correct": 396,
+            "net_correct_report_only": true,
+            "regressed": 79,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "FINALIST_vs_F_q15": {
+            "after_correct": 1787,
+            "after_errors": 0,
+            "before_correct": 1425,
+            "before_errors": 0,
+            "both_correct": 1373,
+            "both_wrong": 166,
+            "brier_delta": -0.23871901410315297,
+            "brier_guardrail_report_only": true,
+            "by_type": {
+              "choice": {
+                "after_correct": 353,
+                "after_errors": 0,
+                "before_correct": 261,
+                "before_errors": 0,
+                "both_correct": 250,
+                "both_wrong": 88,
+                "brier_delta": -0.257566685806631,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 103,
+                "mcnemar_exact_two_sided_p": 6.91984727197323e-20,
+                "n": 452,
+                "net_correct": 92,
+                "regressed": 11,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "noul": {
+                "after_correct": 1310,
+                "after_errors": 0,
+                "before_correct": 1075,
+                "before_errors": 0,
+                "both_correct": 1038,
+                "both_wrong": 72,
+                "brier_delta": -0.21317123078166672,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 272,
+                "mcnemar_exact_two_sided_p": 2.2917327889754908e-45,
+                "n": 1419,
+                "net_correct": 235,
+                "regressed": 37,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "score": {
+                "after_correct": 124,
+                "after_errors": 0,
+                "before_correct": 89,
+                "before_errors": 0,
+                "both_correct": 85,
+                "both_wrong": 6,
+                "brier_delta": -0.4456828717392935,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 39,
+                "mcnemar_exact_two_sided_p": 3.1081526685738936e-08,
+                "n": 134,
+                "net_correct": 35,
+                "regressed": 4,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              }
+            },
+            "correctness_relation": "net_improvement",
+            "fixed": 414,
+            "mcnemar_exact_two_sided_p": 4.4098126469358284e-71,
+            "n": 2005,
+            "net_correct": 362,
+            "net_correct_report_only": true,
+            "regressed": 52,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "FINALIST_vs_U0_q0": {
+            "after_correct": 1708,
+            "after_errors": 0,
+            "before_correct": 1322,
+            "before_errors": 0,
+            "both_correct": 1247,
+            "both_wrong": 222,
+            "brier_delta": -0.25368696127320606,
+            "brier_guardrail_report_only": true,
+            "by_type": {
+              "choice": {
+                "after_correct": 333,
+                "after_errors": 0,
+                "before_correct": 226,
+                "before_errors": 0,
+                "both_correct": 213,
+                "both_wrong": 106,
+                "brier_delta": -0.2733529216636879,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 120,
+                "mcnemar_exact_two_sided_p": 7.33836423851677e-23,
+                "n": 452,
+                "net_correct": 107,
+                "regressed": 13,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "noul": {
+                "after_correct": 1257,
+                "after_errors": 0,
+                "before_correct": 1014,
+                "before_errors": 0,
+                "both_correct": 957,
+                "both_wrong": 105,
+                "brier_delta": -0.23141534769442745,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 300,
+                "mcnemar_exact_two_sided_p": 5.826583559102029e-41,
+                "n": 1419,
+                "net_correct": 243,
+                "regressed": 57,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "score": {
+                "after_correct": 118,
+                "after_errors": 0,
+                "before_correct": 82,
+                "before_errors": 0,
+                "both_correct": 77,
+                "both_wrong": 11,
+                "brier_delta": -0.4231974506149745,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 41,
+                "mcnemar_exact_two_sided_p": 4.405936238072172e-08,
+                "n": 134,
+                "net_correct": 36,
+                "regressed": 5,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              }
+            },
+            "correctness_relation": "net_improvement",
+            "fixed": 461,
+            "mcnemar_exact_two_sided_p": 9.075214451113902e-69,
+            "n": 2005,
+            "net_correct": 386,
+            "net_correct_report_only": true,
+            "regressed": 75,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          },
+          "FINALIST_vs_U0_q15": {
+            "after_correct": 1787,
+            "after_errors": 0,
+            "before_correct": 1429,
+            "before_errors": 0,
+            "both_correct": 1382,
+            "both_wrong": 171,
+            "brier_delta": -0.23984124287290445,
+            "brier_guardrail_report_only": true,
+            "by_type": {
+              "choice": {
+                "after_correct": 353,
+                "after_errors": 0,
+                "before_correct": 267,
+                "before_errors": 0,
+                "both_correct": 258,
+                "both_wrong": 90,
+                "brier_delta": -0.23374083134492307,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 95,
+                "mcnemar_exact_two_sided_p": 2.985745088286603e-19,
+                "n": 452,
+                "net_correct": 86,
+                "regressed": 9,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "noul": {
+                "after_correct": 1310,
+                "after_errors": 0,
+                "before_correct": 1075,
+                "before_errors": 0,
+                "both_correct": 1040,
+                "both_wrong": 74,
+                "brier_delta": -0.223477772956097,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 270,
+                "mcnemar_exact_two_sided_p": 3.9974506497067835e-46,
+                "n": 1419,
+                "net_correct": 235,
+                "regressed": 35,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              },
+              "score": {
+                "after_correct": 124,
+                "after_errors": 0,
+                "before_correct": 87,
+                "before_errors": 0,
+                "both_correct": 84,
+                "both_wrong": 7,
+                "brier_delta": -0.4337005699071847,
+                "brier_guardrail_report_only": true,
+                "correctness_relation": "net_improvement",
+                "fixed": 40,
+                "mcnemar_exact_two_sided_p": 3.0213413992896676e-09,
+                "n": 134,
+                "net_correct": 37,
+                "regressed": 3,
+                "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+                "zero_effect": false
+              }
+            },
+            "correctness_relation": "net_improvement",
+            "fixed": 405,
+            "mcnemar_exact_two_sided_p": 3.902482588088531e-72,
+            "n": 2005,
+            "net_correct": 358,
+            "net_correct_report_only": true,
+            "regressed": 47,
+            "statistical_readout": "配对 dev 差异显著；样本内、不能外推独立泛化",
+            "zero_effect": false
+          }
+        },
+        "qualification_limit": "Engine counts are measured; F prices are budget assumptions. A100 direct-call service_dev latency is not an official harness result. Operator price/hardware validation remains necessary.",
+        "route": "FINALIST = U0/awq int4 base + unmerged bound LoRA adapter (vLLM enable_lora); U0 = same base, no adapter; F = original package"
+      },
+      "sha256": "52ac57b82bd483841cbf6d532cf2bdbd5c13f7b8330c79287c485e975bb46c65",
+      "source_kind": "operator report; no model executed by builder"
+    },
+    "reproducibility/reproducibility.json": {
+      "reported": {
+        "batch_invariant_needed_by_this_sample": false,
+        "conditions": {
+          "invariant": {
+            "comparison": "max-min over all four runs at every ID and label",
+            "max_absolute_probability_difference": 0.0040880583597316,
+            "median_run_p50_seconds": 0.15257131275029678,
+            "median_run_throughput_qps": 5.800824755932101,
+            "passed": true,
+            "performance": [
+              {
+                "adjusted_p50_seconds": 0.4596884639999189,
+                "concurrency": 1,
+                "mean_seconds": 0.17447908126021502,
+                "measurement_wall_seconds": 8.74235263999799,
+                "n": 50,
+                "p50_seconds": 0.15484423199995945,
+                "p95_seconds": 0.21963808000145946,
+                "request_seconds_sum": 8.723954063010751,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 5.719284277236786
+              },
+              {
+                "adjusted_p50_seconds": 0.4387436439996236,
+                "concurrency": 1,
+                "mean_seconds": 0.1638317590999941,
+                "measurement_wall_seconds": 8.209588664998591,
+                "n": 50,
+                "p50_seconds": 0.1443718219998118,
+                "p95_seconds": 0.2049071270012064,
+                "request_seconds_sum": 8.191587954999704,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 6.090439124334444
+              },
+              {
+                "adjusted_p50_seconds": 0.4608839529959369,
+                "concurrency": 1,
+                "mean_seconds": 0.2120702899596654,
+                "measurement_wall_seconds": 10.623335919000965,
+                "n": 50,
+                "p50_seconds": 0.15544197649796843,
+                "p95_seconds": 0.44234461299856775,
+                "request_seconds_sum": 10.60351449798327,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 4.706619500807622
+              },
+              {
+                "adjusted_p50_seconds": 0.45059678700126826,
+                "concurrency": 1,
+                "mean_seconds": 0.16962304108012177,
+                "measurement_wall_seconds": 8.499982236000506,
+                "n": 50,
+                "p50_seconds": 0.15029839350063412,
+                "p95_seconds": 0.21025060600004508,
+                "request_seconds_sum": 8.481152054006088,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 5.882365234627418
+              }
+            ],
+            "route_disagreements_vs_first": 0,
+            "threshold": 0.005,
+            "worst_coordinate": {
+              "id": "easy-extraction-09",
+              "label": "monday",
+              "max": 0.9691830054097139,
+              "min": 0.9650949470499823
+            }
+          },
+          "unset": {
+            "comparison": "max-min over all four runs at every ID and label",
+            "max_absolute_probability_difference": 0.0017646721439639,
+            "median_run_p50_seconds": 0.1506647715004874,
+            "median_run_throughput_qps": 5.809348564042587,
+            "passed": true,
+            "performance": [
+              {
+                "adjusted_p50_seconds": 0.4520888980026939,
+                "concurrency": 1,
+                "mean_seconds": 0.17290682310012925,
+                "measurement_wall_seconds": 8.663450216001365,
+                "n": 50,
+                "p50_seconds": 0.15104444900134695,
+                "p95_seconds": 0.21777337199819158,
+                "request_seconds_sum": 8.645341155006463,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 5.771372692561926
+              },
+              {
+                "adjusted_p50_seconds": 0.4511622480044025,
+                "concurrency": 1,
+                "mean_seconds": 0.17173914285995123,
+                "measurement_wall_seconds": 8.604921704001754,
+                "n": 50,
+                "p50_seconds": 0.15058112400220125,
+                "p95_seconds": 0.21565094799734652,
+                "request_seconds_sum": 8.586957142997562,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 5.810628117249143
+              },
+              {
+                "adjusted_p50_seconds": 0.45149683799754714,
+                "concurrency": 1,
+                "mean_seconds": 0.17181165793997935,
+                "measurement_wall_seconds": 8.608713138000894,
+                "n": 50,
+                "p50_seconds": 0.15074841899877356,
+                "p95_seconds": 0.21734204799940926,
+                "request_seconds_sum": 8.590582896998967,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 5.808069010836031
+              },
+              {
+                "adjusted_p50_seconds": 0.4457057019993954,
+                "concurrency": 1,
+                "mean_seconds": 0.16818163935982738,
+                "measurement_wall_seconds": 8.427295710996987,
+                "n": 50,
+                "p50_seconds": 0.1478528509996977,
+                "p95_seconds": 0.21353956299935817,
+                "request_seconds_sum": 8.40908196799137,
+                "startup_and_warmup_excluded": true,
+                "throughput_questions_per_second": 5.933101402239127
+              }
+            ],
+            "route_disagreements_vs_first": 0,
+            "threshold": 0.005,
+            "worst_coordinate": {
+              "id": "easy-extraction-04",
+              "label": "low",
+              "max": 0.9865408296061966,
+              "min": 0.9847761574622327
+            }
+          }
+        },
+        "cross_condition_max_difference_report_only": 0.003905437075483964,
+        "hard_gate_passed": true,
+        "interpretation": "Only observed repeatability on this fixed public50 workload; not a universal determinism guarantee. Both conditions retain full routing/quota/calibration.",
+        "n": 50,
+        "performance_impact": {
+          "excludes": "model startup and backend-only warmup",
+          "includes": "HTTP request/response; wall throughput also includes client validation and row persistence",
+          "measurement": "four cold process runs per condition, concurrency 1; descriptive, not a significance test",
+          "p50_invariant_over_unset": 1.01265419401511,
+          "throughput_invariant_over_unset": 0.9985327428684097
+        },
+        "recommended_environment": {
+          "VLLM_BATCH_INVARIANT": "1"
+        },
+        "repeats_per_condition": 4,
+        "schema": "submit_v15_reproducibility_v1",
+        "status": "MEASURED"
+      },
+      "sha256": "2da128a5ac61fcec9b1c99a65e25d37e0827398dfe7e0d06a5f08bf723b8a8e7",
+      "source_kind": "operator report; no model executed by builder"
+    }
+  },
+  "route": "unmerged_lora_on_u0_awq",
+  "signed": false
+}

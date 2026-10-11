@@ -1,0 +1,19 @@
+{
+  "actual_training_config_and_manifest": "pending A100 reconciliation",
+  "files": {
+    "PREREG_train_12b_fast_v1_4_DRAFT.md": "8e3dcc52ff54bd3a5fe4d96df3112453578a7da3f74eabb03fd452154a7d9e20",
+    "RUN_v13.example.json": "a29684c0669fce3027d90deda4cab8cae1d59fccc037390f1659a28bf7ba1535",
+    "config.a100.v12.example.json": "19799ce00aa3044fc13452ad0dcf80c2ef7227392b162689807f002174e609c0",
+    "export_u0_v13.py": "c5cdcf1cb351da1c9558cb8e6b87061f193f65773604a38e9c41123a590d7182",
+    "quantize_awq_fast_v13.py": "8892cc6f1730c69d9220ac86889dfa9c528f582b66515f661a3605d548ce5c95",
+    "select_fast.py": "004d8bdd0cb6646cbf2fa344972eafe8e977ea7018dc080ea0f70e26eaddd4ed",
+    "train_lora_fast.py": "14e91a8773ad3adacaf5b5e689160e47ccee44875cfc313b95c2aa3ec104e244",
+    "training_common_fast.py": "8e47a9c14c5ad9c9811af312bd63304ec3d96db45de94ea2cb89c91c45409253"
+  },
+  "route_sources": {
+    "adapter_v15.py": "b521dd7cbb7cf48a2673fa7a2bbda42a85a89d0752b4dd2048698613608e6c57",
+    "build_package_v15.py": "32227601318d83f55e623e45255a545b1ceab9d465c9c37277e922f3d32fc0ed",
+    "service_v15.py": "10248e15c42406ed0f07abcb56a92e329057d2a497a91aa56bc48ce77b47045c"
+  },
+  "source_type": "local source/configuration declarations; A100 artifact reports pending"
+}
