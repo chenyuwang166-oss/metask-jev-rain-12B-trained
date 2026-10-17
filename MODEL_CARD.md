@@ -37,7 +37,7 @@ adapter = LoRARequest("adapter", 1, MODEL_DIR + "/adapter")
 # llm.generate(prompts, sampling_params, lora_request=adapter)
 ```
 
-Loading only the root files gives the untrained base, not this model.
+Loading only the root files gives the base checkpoint without our decision adapter.
 
 ## Measured service properties
 
@@ -52,8 +52,12 @@ measurements, not official benchmark results.
 | Reproducibility: 50 public items x 4 fresh processes, max probability difference | 0.0041 |
 | Readout errors | 0 of 2,005 |
 
+For comparison, the [organizer's leaderboard](https://benchmarkheaven.com/jev-models) reports an on-GPU p50 of 0.115 s and an adjusted p50 of 0.38 s (checked 2026-10-17). The local A100 measurements above use a different setup and are not interchangeable with the organizer's measurements.
+
 ## Data and license
 
-The adapter was trained on our own engineering data. The 231 public JevBench items were used only
-to fit the service package's routing and calibration parameters. License: Apache 2.0, following the
+The adapter was trained on our own engineering data. The 231 public JevBench items were not used to train the adapter. They were used
+to fit service routing and calibration parameters and for self-tests and
+regression/reproducibility checks. These are in-sample service checks, not independent
+evaluation results; see [DISCLOSURE.md](DISCLOSURE.md). License: Apache 2.0, following the
 base model (see the Gemma 4 license link above).
